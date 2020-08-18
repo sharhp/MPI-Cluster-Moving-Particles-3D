@@ -1,0 +1,20 @@
+Code Execution:
+
+	$ ./run.sh (or bash run.sh)
+	(on CSE cluster)
+	
+	$ qsub sub.sh
+	(on HPC2010 cluster)
+
+	Note:
+	All the output folders and input folders are necessary in the given format for the code to run properly (viz., output - ./cse/data1; ./hpc/data1; ./cse/data2; ./hpc/data2 and input - ./data/data1 along with ./data/data2, all these in the root folder of the submission).
+	Please make sure all of the scripts have execute permissions set, in case of inadvertent failure.
+
+Plot Generation:
+
+	$ ./plot.py (or python plot.py)
+	(can be called inside of ./run.sh to fully automate execution and plotting)
+	Note: Please make sure all of the required libraries are installed before execution. The script contains a list of imports it makes, all of which are necessary.
+
+Note:
+The assignment pdf mentions that the job script should run for all configurations. So I've included all configurations (for both data sets) in my job script (both CSE & HPC). But the run on HPC (& sometimes on CSE, specifically for the data2 set) takes more than 2 hours of time. So necessary changes may need to be made for executing it completely (for instance, only a partial configuration in the sub.sh for a particular run).
